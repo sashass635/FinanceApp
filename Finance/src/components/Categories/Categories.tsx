@@ -18,9 +18,13 @@ const CategoryList = () => {
     <div>
       <h2>Categories</h2>
 
-      <button onClick={toggleForm}>{isFormVisible ? "Back" : "Add Category"}</button>
-
-      {isFormVisible && <CategoryForm onAddCategory={addCategory} onCancel={toggleForm} />}
+      {!isFormVisible && <button onClick={toggleForm}>Add Category</button>}
+      {isFormVisible && (
+        <div>
+          <button onClick={toggleForm}>Close</button>
+          <CategoryForm onAddCategory={addCategory} onCancel={toggleForm} />
+        </div>
+      )}
 
       {categories.length > 0 ? (
         <ul>
