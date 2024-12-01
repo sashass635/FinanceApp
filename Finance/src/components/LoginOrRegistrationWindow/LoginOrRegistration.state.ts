@@ -9,5 +9,6 @@ export const useLoginOrRegistrationWindow = () => {
   const openRegistrationWindow = () => navigate("/auth/register");
 
   const close = () => navigate("/expenses");
+
   return { close, openLoginWindow, openRegistrationWindow };
 };
